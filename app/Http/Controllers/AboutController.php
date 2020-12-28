@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class AboutController extends Controller
 {
@@ -27,6 +29,13 @@ class AboutController extends Controller
         //
     }
 
+    public function viewFaq()
+    {
+        //
+        $faqs = Question::get();
+        return view('pages.postedFaq',compact('faqs'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -49,9 +58,11 @@ class AboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function singleFaq($id)
     {
         //
+        $faq = Question::findOrFail($id);
+        return view('pages.singlefaq',compact('faq'));
     }
 
     /**
@@ -83,8 +94,10 @@ class AboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function deleteFaq($id)
     {
         //
+        DB::table('questions')->where('id', $id)->delete();
+             return back()->with('post_deleted', 'Tender has been deleted');
     }
 }

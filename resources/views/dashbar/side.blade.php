@@ -35,7 +35,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="dash" class="nav-link active">
+            <a href="dashboard" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -143,14 +143,29 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="servc" class="nav-link">
+            <a href="" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
-                Service
+                Services
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-           
+            <ul class="nav nav-treeview">
+              
+              <li class="nav-item">
+                <a href="servc" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Post Services</p>
+                </a>
+              </li>
+              <li class="post-question">
+                <a href="" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Posted Services</p>
+                </a>
+              </li>
+              </li>
+            </ul>
           </li>
           
 
@@ -163,12 +178,7 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p></p>
-                </a>
-              </li>
+              
               <li class="nav-item">
                 <a href="pages/UI/icons.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -179,6 +189,12 @@
                 <a href="post-question" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>FAQ</p>
+                </a>
+              </li>
+              <li class="post-question">
+                <a href="postedFaq" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Posted FAQ</p>
                 </a>
               </li>
               </li>
@@ -195,7 +211,7 @@
             
           </li>
           <li class="nav-item">
-            <a href="dashabout" class="nav-link">
+            <a href="" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 Blog
@@ -205,15 +221,18 @@
             <ul class="nav nav-treeview">
               
               <li class="nav-item">
-                <a href="comments" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Comments</p>
-                </a>
+                
               </li>
               <li class="post-question">
                 <a href="blogpost" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Post Blog</p>
+                </a>
+              </li>
+              <li class="post-question">
+                <a href="postedblogs" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Posted Blogs</p>
                 </a>
               </li>
               </li>

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 use App\Models\HomeContent;
 use App\Models\Question;
 use App\Models\SecondPart;
+use App\Models\Blogpost;
 use App\Models\ServicesContent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ServicesController extends Controller
 {
@@ -65,11 +67,16 @@ class ServicesController extends Controller
     public function show()
     {
         //
+        // $string = "Habil is the student at the university of Das es salaam";
+        // dd(Str::of($string)->words(10));
+        $latestposts=Blogpost::orderBy('created_at','desc')
+                            ->take(2)
+                            ->get();
         $questions=Question::all();
         $secondparts=SecondPart::all();
         $contents= HomeContent::all();
         $services= ServicesContent::all();
-        return view('pages.index',compact('services','contents','secondparts','questions'));
+        return view('pages.index',compact('services','contents','secondparts','questions','latestposts'));
     }
 
     /**

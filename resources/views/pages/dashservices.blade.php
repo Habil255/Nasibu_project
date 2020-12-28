@@ -19,7 +19,7 @@
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item">Services Contents</li>
+                                <li class="breadcrumb-item"><a href="/">View Site</a></li>
 
                             </ol>
                         </div><!-- /.col -->
@@ -61,7 +61,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="company_name">Sub-Description:</label>
-                                        <textarea name="sub_description" id="" cols="42" rows="5" required></textarea>
+                                        <textarea name="sub_description" id="" class="col-12 " required></textarea>
                                     </div>
 
 
@@ -99,7 +99,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="company_name">Description:</label>
-                                        <textarea name="description1" id="" cols="42" rows="5" required></textarea>
+                                        <textarea name="description1" id="" class="col-12 " required></textarea>
                                     </div>
 
                                     <div class="form-group">
@@ -130,7 +130,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="company_name">Description:</label>
-                                        <textarea name="description2" id="" cols="42" rows="5"></textarea>
+                                        <textarea name="description2" id="" class="col-12 " ></textarea>
                                     </div>
 
                                     <div class="form-group">

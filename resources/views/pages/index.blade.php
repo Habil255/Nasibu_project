@@ -436,21 +436,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            {{-- <div class="col-md-6 col-lg-4 mb-4"
-                                data-aos="fade-up" data-aos-delay="">
-                                <div class="block__35630">
-                                    <div class="icon mb-3">
-                                        <span class="flaticon-skateboard-4"></span>
-                                    </div>
-                                    @foreach ($services as $service)
-
-
-                                         <h3 class="mb-3"style=" color: #F39C12;">{{ $service->sub_heading }}</h3>
-                                        {{ $service->sub_description }}
-
-                                </div>
-                            </div> --}}
-
+                            
                             <div class="row">
                                 {{-- <div class="col-md-6 col-lg-4 mb-4"
                                     data-aos="fade-up" data-aos-delay="">
@@ -468,7 +454,7 @@
                                 </div> --}}
 
                                 @foreach ($services as $service)
-                                    <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up"
+                                    <div class=" col-md-6 col-lg-4 mb-4" data-aos="fade-up"
                                         data-aos-delay="200">
                                         <div class="block__35630">
                                             {{-- <div class="icon mb-3">
@@ -505,7 +491,7 @@
                 @foreach ($secondparts as $secondpart)
                     <div class="site-section" id="about-nasibu-section">
                         <div class="block__73694 mb-2">
-                            <div class="container">
+                            <div class="container" >
                                 
                             </div>
                         </div>
@@ -542,7 +528,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        
                     </div>
                 @endforeach
 
@@ -886,37 +872,21 @@
     </div>
 </div>
 <div class="row">
+    @foreach ($latestposts as $latestpost )
+        
+    
     <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="">
         <div>
-            <a href="single.html" class="mb-4 d-block"><img src="images/Leopard.jpg" alt="Image"
-                    class="img-fluid rounded"></a>
-            <h2><a href="single.html">How To Find Gold In Mining</a></h2>
-            <p class="text-muted mb-3 text-uppercase small"><span class="mr-2">January 18,
-                    2019</span> By <a href="single.html" class="by">James Cooper</a></p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat et suscipit iste
-                libero neque.
-                Vitae quidem ducimus voluptatibus nemo cum odio ab enim nisi, itaque, libero fuga
-                veritatis
-                culpa quis!</p>
-            <p><a href="blog">Read More</a></p>
+        <a href="single.html" class="mb-4 d-block"><img src="blogs_contents/{{$latestpost->image}}" alt="Image"
+                    class="img-fluid rounded" height="10%" width="80%"></a>
+        <h2><a href="single.html">{{$latestpost->title}}</a></h2>
+        <p class="text-muted mb-3 text-uppercase small"><span class="mr-2">{{$latestpost->created_at}}</a></p>
+            <p>{{Illuminate\Support\Str::of($latestpost->body_1)->words(100)}}</p>
+        <p><a href="blog/{{$latestpost->id}}">Read More</a></p>
         </div>
     </div>
-    <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-        <div>
-            <a href="single.html" class="mb-4 d-block"><img src="images/chui.jpg" alt="Image"
-                    class="img-fluid rounded"></a>
-            <h2><a href="single.html">How To Find Gold In Mining</a></h2>
-            <p class="text-muted mb-3 text-uppercase small"><span class="mr-2">January 18,
-                    2019</span> By <a href="single.html" class="by">James Cooper</a></p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat et suscipit iste
-                libero neque.
-                Vitae quidem ducimus voluptatibus nemo cum odio ab enim nisi, itaque, libero fuga
-                veritatis
-                culpa quis!</p>
-            <p><a href="blog">Read More</a></p>
-        </div>
-    </div>
-
+    @endforeach
+   
 </div>
 </div>
 

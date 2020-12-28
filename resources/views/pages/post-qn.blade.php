@@ -19,7 +19,7 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item">FAQ Contents</li>
+                <li class="breadcrumb-item"><a href="/">View Site</a></li>
                
               </ol>
             </div><!-- /.col -->
@@ -31,7 +31,7 @@
       <!-- Main content -->
       <div class="container" class="ml-12">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
                        <center> Post Question</center>
@@ -51,7 +51,7 @@
                             </div>
                             <div class="form-group">
                               <label for="company_name">Answer:</label>
-                          <textarea name="answer" id="" cols="67" rows="5" required></textarea>
+                          <textarea name="answer" id="" class="col-12" required></textarea>
                           
 
                       
@@ -68,6 +68,7 @@
     </div>
       <!-- /.content -->
     </div>
+</div>
    
     <!-- /.content-wrapper -->
     @include('pages.footer')

@@ -1,4 +1,6 @@
-/* Base */
+*{
+  box-sizing: border-box;
+}/* Base */
 .navbar-collapse ul li a:hover{
   background-color: rgba(53, 26, 4, 0.979);
   transition-duration: 505ms;

@@ -15,8 +15,6 @@ use Illuminate\Support\Facades\DB;
     public function index()
     {
         //
-       
-        
         
         return view('pages.index');
     }

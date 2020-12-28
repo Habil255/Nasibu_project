@@ -3,7 +3,14 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\TestmonialsController;
+use App\Http\Controllers\TechController;
+use App\Http\Controllers\BusiController;
+use App\Http\Controllers\MusicController;
+use App\Http\Controllers\TravelController;
+use App\Http\Controllers\LaughsController;
+use App\Http\Controllers\ScienceController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BlogPostsController;
 use App\Http\Controllers\IndexController;    
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AdminController;
@@ -25,8 +32,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[PageController::class,'index'])->name('view');
 
 
-Route::get('/dashhome',[AdminController::class,'index'])->name('Adminview');
-
+Route::get('/admin',[AdminController::class,'dashView'])->name('Adminview');
+ Route::get('/dashboard',[AdminController::class,'dashView'])->name('Adminview');
 
 Route::get('/testimonial',[IndexController::class,'index'])->name('Testimonials.view');
 Route::post('/testimonial',[IndexController::class,'store'])->name('Testimonials.store');
@@ -44,6 +51,9 @@ Route::get('/',[ServicesController::class,'show'])->name('service.show');
 
 Route::post('/post-question',[AboutController::class,'storeQuestion'])->name('question.post');
 Route::get('/post-question',[AboutController::class,'index'])->name('');
+Route::get('/postedFaq',[AboutController::class,'viewFaq'])->name('');
+Route::get('/delete-faq/{id}',[AboutController::class,'deleteFaq'])->name('');
+Route::get('/view-faq/{id}',[AboutController::class,'singleFaq'])->name('');
 
 Route::get('/form',[PageController::class,'formView'])->name('viewform');
 Route::post('/form',[PageController::class,'storeIssue'])->name('issue.post');
@@ -76,14 +86,49 @@ Route::post('post-issue',[PageController::class,'storeIssue'])->name('issue.post
 
 //This are the blog routes 
 Route::get('/blog',[BlogController::class,'index'])->name('blog');
-Route::post('/blog',[BlogController::class,'comments'])->name('comment.post');
-Route::get('/blog',[BlogController::class,'view']);
+Route::post('/add-comment/{id}',[BlogController::class,'comment'])->name('comment.post');
+Route::get('/blog/{id}',[BlogController::class,'view']);
 
-Route::get('/comments',[BlogController::class,'showComment']);
+// Route::get('/comments',[BlogController::class,'showComment']);
 Route::get('/reply/{id}',[BlogController::class,'edit']);
 
 Route::get('/blogpost',[BlogController::class,'blogPost']);
 
 Route::post('/blogpost',[BlogController::class,'singlePost'])->name('blogpost.store');
+
+
+//POSTED BLOGS SECTION
+
+Route::get('/blogposts',[BlogPostsController::class,'index'])->name('');
+Route::get('/postedblogs',[BlogPostsController::class,'allPosts'])->name('');
+Route::get('/delete-post/{id}',[BlogPostsController::class,'deletePost'])->name('');
+
+Route::get('/view-comments/{id}',[BlogPostsController::class,'viewDashComment'])->name('');
+Route::get('/view-post/{id}',[BlogPostsController::class,'viewDashPosts'])->name('');
+
+//Technology posts
+Route::get('/tech-posts/{id}',[TechController::class,'index']);
+
+//Business Posts
+Route::get('/busi-posts/{id}',[BusiController::class,'index']);
+ 
+
+//Music Posts
+Route::get('/music-posts/{id}',[MusicController::class,'index']);
+
+//Travel Posts
+Route::get('/trav-posts/{id}',[TravelController::class,'index']);
+
+
+//Laughs Posts
+Route::get('/laughs-posts/{id}',[LaughsController::class,'index']);
+
+//Science Posts
+Route::get('/science-posts/{id}',[ScienceController::class,'index']);
+
+
+
+
+
 
 

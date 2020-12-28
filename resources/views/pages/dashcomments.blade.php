@@ -5,7 +5,7 @@
 <div class="wrapper">
 
     @include('dashbar.nav')
-    @include('dashbar.side')
+    @include('dashbar.commentside')
     
   
     <!-- Content Wrapper. Contains page content -->
@@ -15,11 +15,11 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">Forms Results</h1>
+              <h1 class="m-0">Comment</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item">Results Contents</li>
+                <li class="breadcrumb-item"><a href="/">View Site</a></li>
                
               </ol>
             </div><!-- /.col -->
@@ -34,7 +34,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Responsive Hover Table</h3>
+              <h3 class="card-title">Comments</h3>
 
               <div class="card-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -53,7 +53,9 @@
               <table class="table table-hover text-nowrap">
                 <thead>
                   <tr>
-                    
+                    {{-- @if ($total_comment > 0)
+                        
+                    @endif --}}
                     <th>Name</th>
                     <th>Phonenumber</th>
                     <th>Email</th>
@@ -68,8 +70,8 @@
                   <td>{{$data->name}}</td>
                     <td>{{$data->phonenumber}}</td>
                   <td>{{$data->email}}</td>
-                  <td><span>{{$data->message}}</span></td>
-                   
+                  <td><span>{{Illuminate\Support\Str::of($data->message)->words(10)}}</span></td>
+                   {{-- {{$total_comment}} --}}
                   </tr>
                   @endforeach
                 </tbody>

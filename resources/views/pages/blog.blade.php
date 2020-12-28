@@ -1,125 +1,83 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <title>Skater &mdash; Website Template by Colorlib</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,700|Oswald:400,700" rel="stylesheet">
-
-  <link rel="stylesheet" href="fonts/icomoon/style.css">
-
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-  <link rel="stylesheet" href="css/aos.css">
-
-  <!-- MAIN CSS -->
-  <link rel="stylesheet" href="css/style.css">
-
-</head>
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
-  <div class="site-wrap">
-
-    <div class="site-mobile-menu site-navbar-target">
-      <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
-        </div>
-      </div>
-      <div class="site-mobile-menu-body"></div>
-    </div>
-
+@extends('pages.main')
 
     
 
-            <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>blog | Posts</title>
+    @section('content')
+
+    <div class="site-wrap">
+
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+        @include('include.othernav')
+
+        <div class="site-section-cover overlay inner-page bg-light h-100%"
+        style="background-image: url('{{ asset("images/n6.jpg")}}');" data-aos="fade">
 
             <div class="container">
-                <div class="row align-items-center position-relative">
+                <div class="row align-items-center justify-content-center text-center">
+                    <div class="col-lg-10">
+
+                        <div class="box-shadow-content">
+                            <div class="block-heading-1">
+                                <span class="d-block mb-3 text-white" data-aos="fade-up">{{$time}}<span
+                                        class="mx-2 text-primary">&bullet;</span>by Nasibu Mahinya</span>
+                                <h1 class="mb-4" data-aos="fade-up" data-aos-delay="100">Nm Blog</h1>
+                                
+                            </div>
 
 
-                <div class="site-logo">
-                    <a href="index.html" class="text-black"><span class="text-primary">nm</a>
+                        </div>
                     </div>
-                    
-                    <div class="col-12">
-                    <nav class="site-navigation text-right ml-auto " role="navigation">
-
-                        <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                        {{-- <li><a href="#home-section" class="nav-link">Home</a></li> 
-                        <li><a href="#services-section" class="nav-link">Services</a></li>
-
-                        <li class="has-children">
-                            <a href="index.html#about-section" class="nav-link">About Us</a>
-                            <ul class="dropdown arrow-top">
-                            <li><a href="index.html#team-section" class="nav-link">Team</a></li>
-                            <li><a href="index.html#pricing-section" class="nav-link">Pricing</a></li>
-                            <li><a href="index.html#faq-section" class="nav-link">FAQ</a></li>--}}
-                            {{-- <li class="has-children">
-                                <a href="#">More Links</a>
-                                <ul class="dropdown">
-                                <li><a href="#">Menu One</a></li>
-                                <li><a href="#">Menu Two</a></li>
-                                <li><a href="#">Menu Three</a></li>
-                                </ul>
-                            </li> 
-                            </ul>
-                        </li>--}}
-
-                        {{-- <li><a href="index.html#press-section" class="nav-link">Press</a></li>
-
-                        <li><a href="index.html#testimonials-section" class="nav-link">Testimonials</a></li>
-                        <li><a href="index.html#blog-section" class="nav-link active">Blog</a></li> --}}
-                        <li><a href="/" class="nav-link">Home</a></li>
-                        </ul>
-                    </nav>
-
-                    </div>
-
-                    <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
-
                 </div>
-                </div>
-
-            </header>
-
-      <div class="site-section-cover overlay inner-page bg-light h-100%" style=" background-image: url('images/n67.jpg');" data-aos="fade">
-
-        <div class="container">
-          <div class="row align-items-center justify-content-center text-center">
-            <div class="col-lg-10">
-
-              <div class="box-shadow-content">
-                <div class="block-heading-1">
-                  <span class="d-block mb-3 text-white" data-aos="fade-up">April 9th, 2019 <span class="mx-2 text-primary">&bullet;</span> by James Miller</span>
-                  <h1 class="mb-4" data-aos="fade-up" data-aos-delay="100">Nm Blog</h1>
-                </div>
-
-
-              </div>
             </div>
-          </div>
-        </div>
 
-      </div>
+        </div>
 
 
 
       <section class="site-section">
         <div class="container">
           <div class="row">
-            @foreach ($posts as $post)
+            
             <div class="col-md-8 blog-content">
-              <p class="lead text-uppercase"><b>{{$post->title}}</b></p>
-              <img src="blogs_contents/{{ $post->image}}" class="col-md-8 " style="padding:px;"><br><br>
-              <p class="">{{$post->blog_description}}
-                
+            <p class="lead text-uppercase"><b>{{$post->title}}</b></p>
+            
+            <img src="{{ asset("blogs_contents/". $post->image) }}" class=" img-fluid rounded" style="padding:px;"><br><br>
+              <p class="">
+                {{$post->body_1}}
               </p>
-              @endforeach
+
+              <p class="">
+                {{$post->body_2}}
+              </p>
+              <p class="">
+                {{$post->body_3}}
+              </p>
+              <p class="">
+                {{$post->body_4}}
+              </p>
+              <p class="">
+                {{$post->body_5}}
+              </p>
+              <p class="">
+                {{$post->body_6}}
+              </p>
+              <p class="">
+                {{$post->body_7 }}
+              </p>
+             
               {{-- <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident vero tempora aliquam excepturi labore, ad soluta voluptate necessitatibus. Nulla error beatae, quam, facilis suscipit quaerat aperiam minima eveniet quis placeat.</p></blockquote>
 
               <p>Eveniet deleniti accusantium nulla natus nobis nam asperiores ipsa minima laudantium vero cumque cupiditate ipsum ratione dicta, expedita quae, officiis provident harum nisi! Esse eligendi ab molestias, quod nostrum hic saepe repudiandae non. Suscipit reiciendis tempora ut, saepe temporibus nemo.</p>
@@ -136,6 +94,7 @@
 
 
               <div class="pt-5">
+                <p><a href="../blogposts">See All Posts</a></p>
                 <h3 class="mb-5 " >Comments</h3>
                 @foreach ($data as $data)
                 <ul class="comment-list">
@@ -157,7 +116,7 @@
                   </li>
 
                   @endforeach
-
+                  
                     {{-- <ul class="children">
                       <li class="comment">
                         <div class="vcard bio">
@@ -179,7 +138,7 @@
 
                 <div class="comment-form-wrap pt-5">
                   <h3 class="mb-5">Leave a comment Here</h3>
-                <form action="{{ route('comment.post') }}" method="POST" required>
+                <form action="{{ route('comment.post', $post->id) }}" method="POST" required>
                   @csrf
                     <div class="form-group">
                       <label for="name">Name *</label>
@@ -224,19 +183,15 @@
               <div class="sidebar-box">
                 <div class="categories">
                   <h3>Categories</h3>
-                  <li><a href="#">Tech<span>(12)</span></a></li>
-                  <li><a href="#">Business <span>(22)</span></a></li>
-                  <li><a href="#">Music <span>(37)</span></a></li>
-                  <li><a href="#">Travel <span>(42)</span></a></li>
-                  <li><a href="#">Laughs <span>(1)</span></a></li>
+                  <li><a href="/tech-posts/{{$post->id}}">Tech<span>(12)</span></a></li>
+                  <li><a href="/science-posts/{{$post->id}}">Science <span>(1)</span></a></li>
+                  <li><a href="/busi-posts/{{$post->id}}">Business <span>(22)</span></a></li>
+                  <li><a href="/music-posts/{{$post->id}}">Music <span>(37)</span></a></li>
+                  <li><a href="/trav-posts/{{$post->id}}">Travel <span>(42)</span></a></li>
+                  <li><a href="/laughs-posts/{{$post->id}}">Laughs <span>(1)</span></a></li>
                 </div>
               </div>
-              <div class="sidebar-box">
-                <img src="images/_MG_6932.jpg" alt="Image" class="img-fluid mb-4 w-50 rounded-circle">
-                <h3 class="text-black">About The Author</h3>
-                <p>Nasibu also curates playlists on music streaming platforms under the moniker VNKP. Also monitoring music and as well as ensuring that you are getting access to maintain the audience and the platform.</p>
-                <p><a href="https://linktr.ee/naxibu" class="btn btn-primary btn-md text-white">Read More</a></p>
-              </div>
+              @include('include.aboutAthor')
 
               {{-- <div class="sidebar-box">
                 <h3>Paragraph</h3>
@@ -250,20 +205,10 @@
 
       @include('parts.footer')
 
+    
+     
+
     </div>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/aos.js"></script>
 
-    <script src="js/main.js"></script>
-
-  </body>
-  
-  </html>
+@endsection

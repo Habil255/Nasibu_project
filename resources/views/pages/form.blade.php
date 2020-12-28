@@ -21,36 +21,33 @@
             <div class="site-mobile-menu-body"></div>
         </div>
 
+        <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
 
-<nav class="navbar navbar-light bg-dark navbar-expand-lg fixed-top">
-<a href="#"><img src="images\nm-logo.png "style="height 10%; width:10%;"></a>
-  <button class="navbar-toggler mt-" data-toggle="collapse" data-target="#navbarCollapse" style="margin-left: 60%;">
-    <span class="navbar-toggler-icon mt-1" ></span>
-  </button>
-  
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#" style="color: white; font-style: 20px; ">Home <span
-                                        class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#services-section" style="color: white;">Services</a>
-                            </li>
+            <div class="container">
+              <div class="row align-items-center position-relative">
+      
+      
+                <div class="site-logo">
+                    <a href="#"><img src="images\nm-logo.png "style="height 5%; width:5%;"></a>
+                </div>
+                  
+                  <div class="col-12">
+                    <nav class="site-navigation text-right ml-auto " role="navigation">
+      
+                      <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+                        
+                        <li><a href="/" class="nav-link">Home</a></li>
+                      </ul>
+                    </nav>
+      
+                  </div>
+      
+                  <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+      
+                </div>
+            </div>
+        </header>
 
-                            <li><a href="#about-nasibu-section" class="nav-link" style="color: white;">About</a></li>
-
-
-                            <li><a href="#testimonials-section" class="nav-link" style="color: white;">Testimonials</a></li>
-
-                            <li><a href="https://linktr.ee/naxibu" class="nav-link" style="color: white;">Portifolio</a>
-                            </li>
-
-                            <li><a href="#contact-section" class="nav-link" style="color: white;">Contact</a></li>
-                        </ul>
-    </ul>
-  </div>
-</nav>
         {{-- <header class="mb-5">
 
             <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
@@ -126,7 +123,7 @@
 
                                 @if (Session::has('issue_added'))
                                 
-                                <div class="alert alert-success" role="alert" style="font-size:22px;">
+                                <div class="alert alert-success" role="alert" style="font-size:17px;">
                                     <p ><center>{{ Session::get('issue_added') }}</center></p>
                               </div>
 
@@ -147,7 +144,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="company_name">What's your Issue:</label>
-                                    <textarea name="issue" id="" cols="75" rows="5" required></textarea>
+                                    <textarea name="issue" id="" class="col-md-12" required></textarea>
                                     </div>
 
                                     <div style="margin-left: 60%;">

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\Issue;
+use App\Models\Blogpost;
+use App\Models\Comment;
+use App\Models\Question;
 use App\Models\HomeContent;
 use Illuminate\Http\Request;
 
@@ -23,7 +26,8 @@ class AdminController extends Controller
     public function index()
     {
         //
-        return view('pages.dashboard');
+        
+        return view('admin.dashboard');
     }
 
     /**
@@ -31,9 +35,16 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function dashView()
     {
         //
+        $posts=Blogpost::get('id');
+        $all_posts= $posts->count();
+        $all_comment =Comment::get('id')->count();
+        $all_issues =Issue::get('id')->count();
+        $questions =Question::get('id')->count();
+        $time = \Carbon\Carbon::now()->toDateTimeString();
+        return view('admin.dashboard',compact('all_posts','all_comment','all_issues','questions','time'));
     }
 
     /**

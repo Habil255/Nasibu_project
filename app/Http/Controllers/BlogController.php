@@ -1,5 +1,5 @@
 <?php
-
+namespace Carbon\Carbon;
 namespace App\Http\Controllers;
 use App\Models\Comment;
 use Illuminate\Http\Request;
@@ -32,15 +32,30 @@ class BlogController extends Controller
         // ]);
 
         $title=$request->title;
-        $blog_description=$request->blog_description;
+        $body_1=$request->body_1;
+        $body_2=$request->body_2;
+        $body_3=$request->body_3;
+        $body_4=$request->body_4;
+        $body_5=$request->body_5;
+        $body_6=$request->body_6;
+        $body_7=$request->body_7;
         $image= $request->file('file');
         $imageName=time().'.'.$image->extension();
         $image->move(public_path('blogs_contents'),$imageName);
+        $category=$request->category;
+        
 
         $blog=new Blogpost();
         $blog->title=$title;
-        $blog->blog_description=$blog_description;
+        $blog->body_1=$body_1;
+        $blog->body_2=$body_2;
+        $blog->body_3=$body_3;
+        $blog->body_4=$body_4;
+        $blog->body_5=$body_5;
+        $blog->body_6=$body_6;
+        $blog->body_7=$body_7;
         $blog->image=$imageName;
+        $blog->category=$category;
 
         $blog->save();
         return back();  
@@ -51,21 +66,24 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function comments(Request $request)
+    public function comment(Request $request,$id)
     {
-        //
-         
-    
-        Comment::create([
-           'name'=> $request->name,
-            'email'=>$request->email,
-            'phonenumber'=>$request->phonenumber,
-            'message'=>$request->message,
-        ]); 
-         
-            return back();
         
+    $msg=Blogpost::findOrFail($id);
+    $comment= new Comment();
+    $comment->name = $request->name;
+    $comment->email = $request->email;
+    $comment->phonenumber = $request->phonenumber;
+    $comment->message = $request->message;
+    $msg->comments()->save($comment);
+    return back();
 
+        $data= new Comment();
+    // $data->name ='Ibrahim';
+    // $data ->email='Habil@c';
+    // $data ->phonenumber='0712321';
+    // $data ->message='Habil';
+    // $msg ->comments()->save($data);    
     }
 
     /**
@@ -74,12 +92,21 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function view()
+    public function view($id)
     {
-        $posts=Blogpost::get();
-        $data=Comment::limit(5)
-                        ->get();
-        return view('pages.blog',compact('data','posts'));
+        $post=Blogpost::find($id);
+        // return $post->blog_description;
+
+        $time = \Carbon\Carbon::now()->toDateTimeString();
+        $info=Blogpost::findOrfail($id);
+        $data=$info->comments()
+                    ->orderBy('created_at','desc')
+                    ->take(5)
+                    ->get();
+        return view('pages.blog',compact('data','post','time'));
+        // $data=Comment::limit(5)
+        //                 ->get();
+        
         
         //
     }
@@ -134,4 +161,6 @@ class BlogController extends Controller
         //
         
     }
+
+    
 }

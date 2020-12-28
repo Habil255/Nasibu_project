@@ -19,7 +19,7 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item">Testimonials Contents</li>
+                <li class="breadcrumb-item"><a href="/">View Site</a></li>
                
               </ol>
             </div><!-- /.col -->
@@ -55,7 +55,7 @@
                           </div>
                             <div class="form-group">
                               <label for="company_name">Testimony:</label>
-                          <textarea name="description" id="" cols="75" rows="5" required></textarea>
+                          <textarea name="description" id="" class="col-md-12" required></textarea>
                           </div>
                             <div class="form-group">
                               <label for="company_name">Image:</label>
