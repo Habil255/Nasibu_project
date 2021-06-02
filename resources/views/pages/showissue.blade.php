@@ -42,7 +42,7 @@
                                     <div class="form-group">
                                         <label for="company_name">Name:</label>
                                         {{-- <input type="text" name="company_name" class="form-control" --}}
-                                        <p class="form-control">{{ $issue->email }}</p>
+                                        <p class="form-control">{{ $issue->email }}>/p>
                                     </div>
 
                                     <div class="form-group">

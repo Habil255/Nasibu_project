@@ -155,7 +155,7 @@
           
 
           <li class="nav-item">
-            <a href="dashabout" class="nav-link">
+            <a href="../dashabout" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 About
@@ -195,7 +195,7 @@
             
           </li>
           <li class="nav-item">
-            <a href="receivedissues" class="nav-link">
+            <a href="../receivedissues" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 Received Issues

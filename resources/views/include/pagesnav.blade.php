@@ -5,7 +5,7 @@
 
 
         <div class="site-logo">
-            <a href="#"><img src="images\nm-logo.png "style="height 5%; width:5%;"></a>
+            <a href="/"><img src="images\nm-logo.png "style="height 5%; width:5%;"></a>
         </div>
           
           <div class="col-12">

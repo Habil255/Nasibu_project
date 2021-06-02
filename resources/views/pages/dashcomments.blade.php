@@ -60,6 +60,7 @@
                     <th>Phonenumber</th>
                     <th>Email</th>
                     <th>Message</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -71,7 +72,7 @@
                     <td>{{$data->phonenumber}}</td>
                   <td>{{$data->email}}</td>
                   <td><span>{{Illuminate\Support\Str::of($data->message)->words(10)}}</span></td>
-                   {{-- {{$total_comment}} --}}
+                  <td><a href="/single-comment/{{$data->id}}" class="btn btn-success">View</a></td>
                   </tr>
                   @endforeach
                 </tbody>

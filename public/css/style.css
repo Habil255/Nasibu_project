@@ -1,4 +1,5 @@
 *{
+  padding: 0px;
   box-sizing: border-box;
 }/* Base */
 .navbar-collapse ul li a:hover{
@@ -1269,12 +1270,15 @@ h1, h2, h3, h4, h5,
     background: #333;
     z-index: -1; }
   .block__35630 .icon > span {
+
     font-size: 3rem;
     color: #ff8b00; }
 
 .block__35630 h3 {
   color: #000;
+  padding: 1px;
   font-size: 1.4rem; }
+
 
 .footer-suscribe-form .form-control {
   color: #fff;
@@ -1330,3 +1334,6 @@ h1, h2, h3, h4, h5,
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
+.descr{
+  font-size: 14px;
+}

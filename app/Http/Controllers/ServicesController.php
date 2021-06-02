@@ -7,6 +7,8 @@ use App\Models\SecondPart;
 use App\Models\Blogpost;
 use App\Models\ServicesContent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Support\Str;
 
 class ServicesController extends Controller
@@ -72,13 +74,17 @@ class ServicesController extends Controller
         $latestposts=Blogpost::orderBy('created_at','desc')
                             ->take(2)
                             ->get();
-        $questions=Question::all();
+        $sliders=Blogpost::orderBy('created_at','desc')
+                            ->take(2)
+                            ->get();
+$questions=Question::all();
         $secondparts=SecondPart::all();
         $contents= HomeContent::all();
         $services= ServicesContent::all();
-        return view('pages.index',compact('services','contents','secondparts','questions','latestposts'));
+        return view('pages.index',compact('services','contents','secondparts','questions','latestposts','sliders'));
     }
 
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -97,6 +103,14 @@ class ServicesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function dashShow()
+    {
+        //
+        $services=SecondPart::get();
+                 return view('pages.postedservices',compact('services'));               
+    }
+
+
     public function update(Request $request, $id)
     {
         //
@@ -108,9 +122,19 @@ class ServicesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function dashView($id)
+    {
+        //
+        $service=SecondPart::find($id);
+        return view('pages.view-service',compact('service'));
+    }
+
+
     public function destroy($id)
     {
         //
+        DB::table('second_parts')->where('id', $id)->delete();
+             return back()->with('post_deleted', 'Tender has been deleted');
     }
 
     

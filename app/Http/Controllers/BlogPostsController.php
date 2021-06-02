@@ -6,6 +6,7 @@ use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Illuminate\Pagination\Paginator;
 
 class BlogPostsController extends Controller
 {
@@ -17,10 +18,31 @@ class BlogPostsController extends Controller
      */
     public function index()
     {
+        $techPosts =Blogpost::where('category','technology')
+                                ->count();
+        $sciePosts =Blogpost::where('category','science')
+                                ->count();
+        $buisPosts =Blogpost::where('category','business')
+                                ->count();
+        $musicPosts =Blogpost::where('category','music')
+                                ->count();
+        $travelPosts =Blogpost::where('category','travel')
+                                ->count();
+        $laughsPosts =Blogpost::where('category','laughs')
+                                ->count();
         //
-        $blogposts = Blogpost::get();
+        $blogposts = Blogpost::paginate(6);
+        // return $blogposts
+        Paginator::useBootstrap();          
         $time = \Carbon\Carbon::now()->toDateTimeString();
-        return view('pages.postedblogs',compact('blogposts','time'));
+        return view('pages.postedblogs',compact('blogposts',
+                                                'time',
+                                                'techPosts',
+                                                'sciePosts',
+                                                'buisPosts',
+                                                'musicPosts',
+                                                'travelPosts',
+                                                'laughsPosts'));
     }
 
     /**
@@ -94,6 +116,7 @@ class BlogPostsController extends Controller
     public function deletePost($id)
     {
         //
+        
         DB::table('blogposts')->where('id', $id)->delete();
         return back()->with('post_deleted', 'Tender has been deleted');
     }
@@ -115,7 +138,19 @@ class BlogPostsController extends Controller
 
     }
 
-    public function viewDashPosts(){
+    public function viewDashPosts($id){
+        $data=Blogpost::findOrFail($id)
+                        ->comments()
+                        ->get();
+        return view('pages.viewDashBlog',compact('data'));
+    }
 
+
+    public function showComment($id)
+    {
+        
+        $comment=Comment::find($id);
+        return view('pages.singleComment',compact('comment'));
+        
     }
 }

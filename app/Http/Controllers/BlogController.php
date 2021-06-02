@@ -15,7 +15,9 @@ class BlogController extends Controller
     public function index()
     {
         //
+        
         return view('pages.blog');
+        
     }
 
     public function singlePost(Request $request)
@@ -94,16 +96,46 @@ class BlogController extends Controller
      */
     public function view($id)
     {
+        $techPosts =Blogpost::findOrFail($id)
+                                ->where('category','technology')
+                                ->count();
+        $sciePosts =Blogpost::findOrFail($id)
+                                ->where('category','science')
+                                ->count();
+        $buisPosts =Blogpost::findOrFail($id)
+                                ->where('category','business')
+                                ->count();
+        $musicPosts =Blogpost::findOrFail($id)
+                                ->where('category','music')
+                                ->count();
+        $travelPosts =Blogpost::findOrFail($id)
+                                ->where('category','travel')
+                                ->count();
+        $laughsPosts =Blogpost::findOrFail($id)
+                                ->where('category','laughs')
+                                ->count();
+        
         $post=Blogpost::find($id);
+       
         // return $post->blog_description;
-
+        $all_comment=Comment::get('id')->count();
         $time = \Carbon\Carbon::now()->toDateTimeString();
         $info=Blogpost::findOrfail($id);
         $data=$info->comments()
                     ->orderBy('created_at','desc')
                     ->take(5)
                     ->get();
-        return view('pages.blog',compact('data','post','time'));
+                    
+                    
+        return view('pages.blog',compact('data',
+                                        'post',
+                                        'time',
+                                        'techPosts',
+                                        'sciePosts',
+                                        'buisPosts',
+                                        'musicPosts',
+                                        'travelPosts',
+                                        'laughsPosts'));
         // $data=Comment::limit(5)
         //                 ->get();
         

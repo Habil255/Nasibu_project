@@ -7,7 +7,7 @@
 <html lang="en">
 
 <head>
-    <title>blog | Posts</title>
+<title>Posts | Business</title>
     @section('content')
 
     <div class="site-wrap">
@@ -23,7 +23,7 @@
         @include('include.othernav')
 
         <div class="site-section-cover overlay inner-page bg-light h-100%"
-        style="background-image: url('{{ asset("images/n6.jpg")}}');" data-aos="fade">
+        style="background-image: url('{{ asset("images/n67.jpg")}}');" data-aos="fade">
 
             <div class="container">
                 <div class="row align-items-center justify-content-center text-center">
@@ -31,10 +31,11 @@
 
                         <div class="box-shadow-content">
                             <div class="block-heading-1">
-                                <span class="d-block mb-3 text-white" data-aos="fade-up">April 4, 2020<span
-                                        class="mx-2 text-primary">&bullet;</span>by Nasibu Mahinya</span>
+                            <!-- <p class="" data-aos="fade-up">Business</p> -->
+                                <span class="d-block mb-3 text-white" data-aos="fade-up">{{$time}}<span
+                                        class="mx-2 text-primary">&bullet;</span>by Nasibu Mahinya<br> &bullet;Business</span>
                                 <h1 class="mb-4" data-aos="fade-up" data-aos-delay="100">Nm Blog</h1>
-                                <p class="" data-aos="fade-up">Business</p>
+                                
                             </div>
 
 
@@ -53,6 +54,7 @@
 
                     <div class="col-md-8 blog-content">
                         <div class="row">
+                            {{-- @if(!empty($posts) && $posts->count()) --}}
                             @foreach ($blogposts as $blogpost)
                                 
                            
@@ -60,10 +62,15 @@
                                     <h3>{{$blogpost->title}}</h3>
                                 <a href="single.html" class="mb-4 d-block "><img src="{{ asset("blogs_contents/". $blogpost->image) }}" height="100%" width="100%" alt="Image"
                                     class="img-fluid rounded"></a>
-                                <p>{{Illuminate\Support\Str::of($blogpost->blog_description)->words(100)}}<a href="../blog/{{$blogpost->id}}">Read More</a></p>
+                                <p class="font-size-14">{{Illuminate\Support\Str::of($blogpost->body_1)->words(100)}}<a href="../blog/{{$blogpost->id}}">Read More</a></p>
                             </div>
                             @endforeach
                             
+                            {{-- @else
+                            <tr>
+                                <td colspan="10">There are no data.</td>
+                            </tr>
+                        @endif --}}
                             {{-- <div class="col-md-6 mb-2" data-aos="fade-up" data-aos-delay="200">
                                 <h3>Why Girrafe likes to Travel</h3>
                                 <a href="single.html" class="mb-4 d-block "><img src="blogs_contents/1607977534.jpeg " height="1000%" width="100%" alt="Image"
@@ -78,21 +85,29 @@
     
     
                         </div>
+                        <span class="d-flex justify-content-center p-3">
+                            {{$blogposts ->links()}}
+                        </span>
+                        <style>
+                            .w-5{
+                                display: none;
+                            }
 
+                        </style>
 
                         
 
                     </div>
                     <div class="col-md-4 sidebar ">
-                        <div class="sidebar-box">
+                        {{-- <div class="sidebar-box">
                             <form action="#" class="search-form">
                                 <div class="form-group">
                                     <span class="icon fa fa-search"></span>
                                     <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
                                 </div>
                             </form>
-                        </div>
-                        <div class="sidebar-box">
+                        </div> --}}
+                        <!-- <div class="sidebar-box">
                             <div class="categories">
                                 <h3>Categories</h3>
                                 <li><a href="/tech-posts/{{$blogpost->id}}">Tech<span>(12)</span></a></li>
@@ -102,8 +117,10 @@
                                 <li><a href="/trav-posts/{{$blogpost->id}}">Travel <span>(42)</span></a></li>
                                 <li><a href="/laughs-posts/{{$blogpost->id}}">Laughs <span>(1)</span></a></li>
                             </div>
-                        </div>
+                        </div> -->
+                        @include('include.categories')
                         @include('include.aboutAthor')
+                    
 
                         {{-- <div class="sidebar-box">
                             <h3>Paragraph</h3>

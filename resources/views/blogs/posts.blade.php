@@ -57,6 +57,7 @@
                     <th>Title</th>
                     <th>image</th>
                     <th>Posted Date</th>
+                    <th>Category</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -70,6 +71,7 @@
                     <td>{{Illuminate\Support\Str::of($post->title)->words(9)}}</td>
                     <td> <img src="blogs_contents/{{$post->image}}" width="50px" height="50px" alt=""></td>
                   <td>{{$post->created_at}}</td>
+                  <td>{{$post->category}}</td>
                   
                   <td>
                     <a href="/view-post/{{$post->id}}" class="btn btn-success">View</a>
@@ -84,7 +86,7 @@
             </div>
             <!-- /.card-body -->
             <div class="card-footer clearfix">
-              <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
+              <!-- <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a> -->
               <a href="blogpost" class="btn btn-sm btn-secondary float-right">Add Blog Post</a>
             </div>
           </div>

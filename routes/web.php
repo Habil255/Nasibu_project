@@ -104,6 +104,7 @@ Route::get('/postedblogs',[BlogPostsController::class,'allPosts'])->name('');
 Route::get('/delete-post/{id}',[BlogPostsController::class,'deletePost'])->name('');
 
 Route::get('/view-comments/{id}',[BlogPostsController::class,'viewDashComment'])->name('');
+Route::get('/single-comment/{id}',[BlogPostsController::class,'showComment'])->name('');
 Route::get('/view-post/{id}',[BlogPostsController::class,'viewDashPosts'])->name('');
 
 //Technology posts

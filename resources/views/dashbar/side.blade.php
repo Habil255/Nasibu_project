@@ -10,7 +10,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="images/n6.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Nasibu Mahinya</a>
@@ -134,14 +134,14 @@
               </li>
             </ul>
           </li> --}}
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="dashhome" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               
                 Home
               
             </a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a href="" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
@@ -158,12 +158,12 @@
                   <p>Post Services</p>
                 </a>
               </li>
-              <li class="post-question">
+              <!-- <li class="post-question">
                 <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Posted Services</p>
                 </a>
-              </li>
+              </li> -->
               </li>
             </ul>
           </li>
@@ -179,12 +179,12 @@
             </a>
             <ul class="nav nav-treeview">
               
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="pages/UI/icons.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pricing</p>
                 </a>
-              </li>
+              </li> -->
               <li class="post-question">
                 <a href="post-question" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>

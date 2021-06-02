@@ -23,7 +23,7 @@
         @include('include.othernav')
 
         <div class="site-section-cover overlay inner-page bg-light h-100%"
-        style="background-image: url('{{ asset("images/n6.jpg")}}');" data-aos="fade">
+        style="background-image: url('{{ asset("images/n67.jpg")}}');" data-aos="fade">
 
             <div class="container">
                 <div class="row align-items-center justify-content-center text-center">
@@ -55,7 +55,8 @@
             <p class="lead text-uppercase"><b>{{$post->title}}</b></p>
             
             <img src="{{ asset("blogs_contents/". $post->image) }}" class=" img-fluid rounded" style="padding:px;"><br><br>
-              <p class="">
+             <div class="font-size-14"> 
+               <p class="">
                 {{$post->body_1}}
               </p>
 
@@ -77,6 +78,7 @@
               <p class="">
                 {{$post->body_7 }}
               </p>
+             </div>
              
               {{-- <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident vero tempora aliquam excepturi labore, ad soluta voluptate necessitatibus. Nulla error beatae, quam, facilis suscipit quaerat aperiam minima eveniet quis placeat.</p></blockquote>
 
@@ -172,23 +174,35 @@
 
             </div>
             <div class="col-md-4 sidebar">
-              <div class="sidebar-box">
+              <!-- <div class="sidebar-box">
                 <form action="#" class="search-form">
                   <div class="form-group">
                     <span class="icon fa fa-search"></span>
                     <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
                   </div>
                 </form>
-              </div>
+              </div> -->
               <div class="sidebar-box">
                 <div class="categories">
                   <h3>Categories</h3>
-                  <li><a href="/tech-posts/{{$post->id}}">Tech<span>(12)</span></a></li>
-                  <li><a href="/science-posts/{{$post->id}}">Science <span>(1)</span></a></li>
-                  <li><a href="/busi-posts/{{$post->id}}">Business <span>(22)</span></a></li>
-                  <li><a href="/music-posts/{{$post->id}}">Music <span>(37)</span></a></li>
-                  <li><a href="/trav-posts/{{$post->id}}">Travel <span>(42)</span></a></li>
-                  <li><a href="/laughs-posts/{{$post->id}}">Laughs <span>(1)</span></a></li>
+                  @if ($techPosts > 0)
+                    @endif
+                    @if ($sciePosts > 0)
+                    @endif
+                    @if ($buisPosts > 0)
+                    @endif
+                    @if ($musicPosts > 0)
+                    @endif
+                    @if ($travelPosts > 0)
+                    @endif
+                    @if ($laughsPosts > 0)
+                    @endif
+                  <li><a href="/tech-posts/{{$post->id}}">Tech<span>({{$techPosts}})</span></a></li>
+                  <li><a href="/science-posts/{{$post->id}}">Science<span>({{$sciePosts}})</span></a></li>
+                  <li><a href="/busi-posts/{{$post->id}}">Business <span>({{$buisPosts}})</span></a></li>
+                  <li><a href="/music-posts/{{$post->id}}">Music <span>({{$musicPosts}})</span></a></li>
+                  <li><a href="/trav-posts/{{$post->id}}">Travel <span>({{$travelPosts}})</span></a></li>
+                  <li><a href="/laughs-posts/{{$post->id}}">Laughs <span>({{$laughsPosts}})</span></a></li>
                 </div>
               </div>
               @include('include.aboutAthor')

@@ -7,7 +7,7 @@
 <html lang="en">
 
 <head>
-    <title>blog | Posts</title>
+    <title>Posts | Laughs</title>
     @section('content')
 
     <div class="site-wrap">
@@ -31,10 +31,10 @@
 
                         <div class="box-shadow-content">
                             <div class="block-heading-1">
-                                <span class="d-block mb-3 text-white" data-aos="fade-up">April 4, 2020<span
-                                        class="mx-2 text-primary">&bullet;</span>by Nasibu Mahinya</span>
+                                <span class="d-block mb-3 text-white" data-aos="fade-up">{{$time}}<span
+                                class="mx-2 text-primary">&bullet;</span>by Nasibu Mahinya<br> &bullet;Laughs</span>
                                 <h1 class="mb-4" data-aos="fade-up" data-aos-delay="100">Nm Blog</h1>
-                                <p class="" data-aos="fade-up">Laughs</p>
+                                <!-- <p class="" data-aos="fade-up">Laughs</p> -->
                             </div>
 
 
@@ -60,7 +60,7 @@
                                     <h3>{{$blogpost->title}}</h3>
                                 <a href="single.html" class="mb-4 d-block "><img src="{{ asset("blogs_contents/". $blogpost->image) }}" height="100%" width="100%" alt="Image"
                                     class="img-fluid rounded"></a>
-                                <p>{{Illuminate\Support\Str::of($blogpost->body_1)->words(100)}}<a href="../blog/{{$blogpost->id}}">Read More</a></p>
+                                <p class="font-size-14">{{Illuminate\Support\Str::of($blogpost->body_1)->words(100)}}<a href="../blog/{{$blogpost->id}}">Read More</a></p>
                             </div>
                             @endforeach
                             
@@ -78,32 +78,30 @@
     
     
                         </div>
-                        
+                        <span class="d-flex justify-content-center p-3">
+                            {{$blogposts->links()}}
+                        </span>
+                        <style>
+                            .w-5{
+                                display: none;
+                            }
+
+                        </style>
                         <p><a href="../blogposts">See All Posts</a></p> 
 
                         
 
                     </div>
                     <div class="col-md-4 sidebar ">
-                        <div class="sidebar-box">
+                        {{-- <div class="sidebar-box">
                             <form action="#" class="search-form">
                                 <div class="form-group">
                                     <span class="icon fa fa-search"></span>
                                     <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
                                 </div>
                             </form>
-                        </div>
-                        <div class="sidebar-box">
-                            <div class="categories">
-                                <h3>Categories</h3>
-                                <li><a href="/tech-posts/{{$blogpost->id}}">Tech<span>(12)</span></a></li>
-                                <li><a href="/busi-posts/{{$blogpost->id}}">Business <span>(22)</span></a></li>
-                                <li><a href="/science-posts/{{$blogpost->id}}">Science <span>(1)</span></a></li>
-                                <li><a href="/music-posts/{{$blogpost->id}}">Music <span>(37)</span></a></li>
-                                <li><a href="/trav-posts/{{$blogpost->id}}">Travel <span>(42)</span></a></li>
-                                <li><a href="#">Laughs <span>(1)</span></a></li>
-                            </div>
-                        </div>
+                        </div> --}}
+                        @include('include.categories')
                         @include('include.aboutAthor')
 
                         {{-- <div class="sidebar-box">

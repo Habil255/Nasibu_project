@@ -379,6 +379,24 @@
                             </div>
 
                         </div>
+                        <!-- <div class="row">
+    @foreach ($sliders as $slider )
+        
+    
+    <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="">
+        <div>
+        <a href="single.html" class="mb-4 d-block"><img src="blogs_contents/{{$slider->image}}" alt="Image"
+                    class="img-fluid rounded" height="10%" width="80%"></a>
+        <h2><a href="single.html">{{$slider->title}}</a></h2>
+        <p class="text-muted mb-3 text-uppercase small"><span class="mr-2">{{$slider->created_at}}</a></p>
+            <p class="font-size-14">{{Illuminate\Support\Str::of($slider->body_1)->words(100)}}</p>
+        <p><a href="blog/{{$slider->id}}">Read More</a></p>
+        </div>
+    </div>
+    @endforeach
+   
+</div> -->
+
                         <div class="site-section-cover overlay img-bg-section"
                             style="background-image: url('images/_MG_6932.jpg'); ;">
                             <div class="container">
@@ -460,12 +478,12 @@
                                             {{-- <div class="icon mb-3">
                                                 <span class="flaticon-skateboard-1"></span>
                                             </div> --}}
-                                            <h3 class="mb-3 "style=" color: #F39C12;">{{ $service->sub_heading }}</h3>
-                                            <h5 class="mb-3 " style="font-size: 12px; color: white;">
+                                            <h3 class="mb-3 p-2"style=" color: #F39C12;">{{ $service->sub_heading }}</h3>
+                                            <h5 class="mb-3 p-2" style="font-size: 12px; color: white;">
                                                 {{ $service->services_description }}</h5>
-                                            {{ $service->sub_description }}
+                                            <p class="p-2 font-size-14">{{ $service->sub_description }}</p>
                                         </div>
-                                        <a href="form">Ask For Quote</a>
+                                        <a href="form" class="p-2">Ask For Quote</a>
                                     </div>
                                 @endforeach 
 
@@ -475,62 +493,93 @@
                                     {{-- <div class="icon mb-3">
                                         <span class="flaticon-skateboard-1"></span>
                                     </div> --}}
-                                    <h3 class="mb-3 "style=" color: #F39C12;">Media Consultation</h3>
-                                    Let’s talk about what will make both of us more knowledgeable
+                                    <h3 class="mb-3 p-2"style=" color: #F39C12;">Media Consultation</h3>
+                                    <p class="p-2 font-size-14">Let’s talk about what will make both of us more knowledgeable
                                     and hopefully you could trust me
                                     with bridging the gap between you and your media partners and
                                     vendors to ensure quality of the
-                                    service you are receiving.
+                                    service you are receiving.</p>
                                 </div>
-                                <a href="#">Book Appointment</a>
+                                <a href="#" class="p-2">Book Appointment</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 @foreach ($secondparts as $secondpart)
-                    <div class="site-section" id="about-nasibu-section">
-                        <div class="block__73694 mb-2">
-                            <div class="container" >
-                                
-                            </div>
-                        </div>
+                <div class="site-section" id="about-nasibu-section">
+                    <div class="block__73694 mb-2">
+                        <div class="container">
+                            <div class="row d-flex  align-items-stretch">
 
-
-                        <div class="block__73694">
-                            <div class="container">
-                                <div class="row d-flex no-gutters align-items-stretch">
-
-                                    <div class="col-12 col-lg-6 block__73422 order-lg-2"
-                                        style="background-image: url('{{ asset('image2') }}/{{ $secondpart->image2 }}');"
-                                        data-aos="fade-left" data-aos-delay="">
-                                    </div>
+                                <div class="col-12 col-lg-6 block__73422"
+                                    style="background-image: url('{{ asset('services') }}/{{ $secondpart->image1 }}');"
+                                    data-aos="fade-right" data-aos-delay="">
+                                </div>
 
 
 
-                                    <div class="col-lg-5 mr-auto p-lg-5 mt-4 mt-lg-0 order-lg-1"
-                                        data-aos="fade-right" data-aos-delay="">
-                                        <h2 class="mb-3 text-primary">{{ $secondpart->heading2 }}
-                                        </h2>
-                                        <p>{{ $secondpart->description2 }}</p>
 
-                                        <p></p>
 
-                                        <ul class="ul-check primary list-unstyled mt-5">
-                                            <li>{{ $secondpart->list_1 }}</li>
-                                            <li>{{ $secondpart->list_2 }}</li>
-                                            <li>{{ $secondpart->list_3 }}</li>
-                                            <li>{{ $secondpart->list_4 }}</li>
-                                        </ul>
-                                        View full Portifolio&nbsp;&nbsp;<a href="https://linktr.ee/naxibu">HERE</a>
-                                    </div>
+                                <div class="col-lg-5 ml-auto p-lg-5 mt-4 mt-lg-0"
+                                    data-aos="fade-left" data-aos-delay="">
+                                    <h2 class="mb-3 text-primary">{{ $secondpart->heading1 }}
+                                    </h2>
+                                    <p class="descr">{{ $secondpart->description1 }}</p>
+
+                                    <p></p>
+
+                                    <ul class="ul-check primary list-unstyled mt-5 font-size-14Four ">
+                                        <li>{{ $secondpart->list1 }}</li>
+                                        <li>{{ $secondpart->list2 }}</li>
+                                        <li>{{ $secondpart->list3 }}</li>
+                                        <li>{{ $secondpart->list4 }}</li>
+                                    </ul>
+                                    View full Portifolio&nbsp;&nbsp;<a href="https://linktr.ee/naxibu">HERE</a>
 
                                 </div>
+
+
+
                             </div>
                         </div>
-                        
                     </div>
-                @endforeach
+
+
+                    <div class="block__73694">
+                        <div class="container">
+                            <div class="row d-flex no-gutters align-items-stretch">
+
+                                <div class="col-12 col-lg-6 block__73422 order-lg-2"
+                                    style="background-image: url('{{ asset('image2') }}/{{ $secondpart->image2 }}');"
+                                    data-aos="fade-left" data-aos-delay="">
+                                </div>
+
+
+
+                                <div class="col-lg-5 mr-auto p-lg-5 mt-4 mt-lg-0 order-lg-1"
+                                    data-aos="fade-right" data-aos-delay="">
+                                    <h2 class="mb-3 text-primary">{{ $secondpart->heading2 }}
+                                    </h2>
+                                    <p class="descr">{{ $secondpart->description2 }}</p>
+
+                                    <p></p>
+
+                                    <ul class="ul-check primary list-unstyled mt-5 font-size-14">
+                                        <li>{{ $secondpart->list_1 }}</li>
+                                        <li>{{ $secondpart->list_2 }}</li>
+                                        <li>{{ $secondpart->list_3 }}</li>
+                                        <li>{{ $secondpart->list_4 }}</li>
+                                    </ul>
+                                    View full Portifolio&nbsp;&nbsp;<a href="https://linktr.ee/naxibu">HERE</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            @endforeach
 
 
 
@@ -877,11 +926,11 @@
     
     <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="">
         <div>
-        <a href="single.html" class="mb-4 d-block"><img src="blogs_contents/{{$latestpost->image}}" alt="Image"
-                    class="img-fluid rounded" height="10%" width="80%"></a>
+        <a href="blog/{{$latestpost->id}}" class="mb-4 d-block"><img src="blogs_contents/{{$latestpost->image}}" alt="Image"
+                    class="img-fluid rounded col-md-12 "  height="10%" width="80%"></a>
         <h2><a href="single.html">{{$latestpost->title}}</a></h2>
         <p class="text-muted mb-3 text-uppercase small"><span class="mr-2">{{$latestpost->created_at}}</a></p>
-            <p>{{Illuminate\Support\Str::of($latestpost->body_1)->words(100)}}</p>
+            <p class="font-size-14">{{Illuminate\Support\Str::of($latestpost->body_1)->words(100)}}</p>
         <p><a href="blog/{{$latestpost->id}}">Read More</a></p>
         </div>
     </div>
@@ -895,14 +944,14 @@
 <div class="container">
     <div class="row">
         <div class="col-12 text-center mb-5" data-aos="fade-up" data-aos-delay="">
-            <div class="block-heading-1">
+            <div class="block-heading-1 font-size-14">
                 <span>Get In Touch</span>
                 <h2>Contact Me</h2>
                 <p>If we haven’t answered your question in the FAQ then reach out here:</p>
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row font-size-14">
         <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="100">
             <form action="#" method="post">
                 <p>Speak to my business associate if you're interested in doing business with the

@@ -1,9 +1,9 @@
 <?php
-
+namespace Carbon\Carbon;
 namespace App\Http\Controllers;
 use App\Models\Blogpost;
 use Illuminate\Http\Request;
-
+use Illuminate\Pagination\Paginator;
 class BusiController extends Controller
 {
     /**
@@ -13,12 +13,40 @@ class BusiController extends Controller
      */
     public function index($id)
     {
+        $techPosts =Blogpost::findOrFail($id)
+                                ->where('category','technology')
+                                ->count();
+        $sciePosts =Blogpost::findOrFail($id)
+                                ->where('category','science')
+                                ->count();
+        $buisPosts =Blogpost::findOrFail($id)
+                                ->where('category','business')
+                                ->count();
+        $musicPosts =Blogpost::findOrFail($id)
+                                ->where('category','music')
+                                ->count();
+        $travelPosts =Blogpost::findOrFail($id)
+                                ->where('category','travel')
+                                ->count();
+        $laughsPosts =Blogpost::findOrFail($id)
+                                ->where('category','laughs')
+                                ->count();
         //
+        $time = \Carbon\Carbon::now()->toDateTimeString();
         $blogposts = Blogpost::findOrFail($id)
                          ->where('category','business')
-                         ->get();
-          
-         return view('blogs.business',compact('blogposts'));
+                         ->paginate(6);
+        // $posts = Blogpost::paginate(2);
+        Paginator::useBootstrap(); 
+        
+         return view('blogs.business',compact('blogposts',
+                                        'time',
+                                        'techPosts',
+                                        'sciePosts',
+                                        'buisPosts',
+                                        'musicPosts',
+                                        'travelPosts',
+                                        'laughsPosts'));
     }
 
     /**
