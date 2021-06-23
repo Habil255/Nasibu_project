@@ -501,7 +501,7 @@
                                     vendors to ensure quality of the
                                     service you are receiving.</p>
                                 </div>
-                                <a href="#" class="p-2">Book Appointment</a>
+                                <a href="form" class="p-2">Book Appointment</a>
                             </div>
                         </div>
                     </div>
