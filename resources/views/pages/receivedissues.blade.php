@@ -58,6 +58,7 @@
               </thead>
               <tbody>
                 @foreach ($datas as $data)
+               
                     
                 
               <tr>

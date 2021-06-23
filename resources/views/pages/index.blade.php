@@ -1,5 +1,6 @@
 @extends('pages.main')
 
+
 @section('content')
     {{-- @include('name') --}}
 
@@ -140,7 +141,7 @@
         {{-- <div class="col-12">
 
             <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top" style="height: auto;">
-                <div><img src="images\nm-logo.png " class="m-md-auto" style="height 10%; width:10%;"> 
+                <div><img src="images\nm-logo.png " class="m-md-auto" style="height:10%; width:10%;"> 
                     {{-- <a href="/" class="text-black"><span class="text-primary"><img
                                 src="images\nm-logo.png" style="height: 8%; width:8%;"></a> --}}
                     {{-- <a style="text-align: left;" class="navbar-brand bold"
@@ -445,7 +446,7 @@
                         <div class="row mb-5 justify-content-center">
                             <div class="col-md-7 text-center">
                                 <div class="block-heading-1" data-aos="fade-up" data-aos-delay="">
-                                    <h2>SERVICES</h2>
+                                    <h2 style=""><u>Related Works</u></h2>
 
 
 
@@ -465,7 +466,7 @@
                                         @foreach ($services as $service)
 
 
-                                             <h3 class="mb-3"style=" color: #F39C12;">{{ $service->sub_heading }}</h3>
+                                             <h3 class="mb-3"style=" color: #91F4DE;">{{ $service->sub_heading }}</h3>
                                             {{ $service->sub_description }}
 
                                     </div>
@@ -478,8 +479,8 @@
                                             {{-- <div class="icon mb-3">
                                                 <span class="flaticon-skateboard-1"></span>
                                             </div> --}}
-                                            <h3 class="mb-3 p-2"style=" color: #F39C12;">{{ $service->sub_heading }}</h3>
-                                            <h5 class="mb-3 p-2" style="font-size: 12px; color: white;">
+                                            <h3 class="mb-3 p-2"style=" color: #5CAD9A;">{{ $service->sub_heading }}</h3>
+                                            <h5 class="mb-3 p-2" style="font-size: 18px; color: #ff8b00;">
                                                 {{ $service->services_description }}</h5>
                                             <p class="p-2 font-size-14">{{ $service->sub_description }}</p>
                                         </div>
@@ -493,7 +494,7 @@
                                     {{-- <div class="icon mb-3">
                                         <span class="flaticon-skateboard-1"></span>
                                     </div> --}}
-                                    <h3 class="mb-3 p-2"style=" color: #F39C12;">Media Consultation</h3>
+                                    <h3 class="mb-3 p-2"style=" color: #5CAD9A;">Media Consultation</h3>
                                     <p class="p-2 font-size-14">Let’s talk about what will make both of us more knowledgeable
                                     and hopefully you could trust me
                                     with bridging the gap between you and your media partners and
@@ -517,8 +518,7 @@
                                     data-aos="fade-right" data-aos-delay="">
                                 </div>
 
-
-
+                                
 
 
                                 <div class="col-lg-5 ml-auto p-lg-5 mt-4 mt-lg-0"
@@ -602,10 +602,10 @@
 
                                 <div class="row">
 
-                                    <table class="table" style="text-decoration-line: none; margin-left: %;" >
+                                    <table class="table col-md-12 no-line"  style="text-decoration-line: none;" >
                                         <tr>
                                             <td>
-                                                <div class="col-6 col-md-6 mb-2 col-lg-0 col-lg-3"
+                                                <div class="col-6 col-md-4 mb-2 col-lg-0 col-lg-10"
                                                     data-aos="fade-up" data-aos-delay="">
                                                     <div class="block-counter-1">
                                                         <span class="number text-primary"><span
@@ -615,8 +615,8 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td style=" margin-left: 50%;">
-                                                <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3"
+                                            <td style ="">
+                                                <div class="col-6 col-md-4 mb-4 col-lg-0 col-lg-12"
                                                     data-aos="fade-up" data-aos-delay="100">
                                                     <div class="block-counter-1">
                                                         <span class="number text-primary"><span
@@ -626,8 +626,8 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td style=" margin-left: 90%;">
-                                                <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3"
+                                            <td style="">
+                                                <div class="col-6 col-md-4 mb-4 col-lg-0 col-lg-12"
                                                     data-aos="fade-up" data-aos-delay="200">
                                                     <div class="block-counter-1">
                                                         <span class="number text-primary"><span
@@ -639,9 +639,9 @@
                                             <td>
 
                                         </tr>
-                                        <tr>
+                                        <!-- <tr>
                                             <td>
-                                                <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3"
+                                                <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-10"
                                                     data-aos="fade-up" data-aos-delay="300">
                                                     <div class="block-counter-1">
                                                         <span class="number text-primary"><span
@@ -651,7 +651,7 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3"
+                                                <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-12"
                                                     data-aos="fade-up" data-aos-delay="300">
                                                     <div class="block-counter-1">
                                                         <span class="number text-primary"><span
@@ -661,7 +661,7 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3"
+                                                <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-12"
                                                     data-aos="fade-up" data-aos-delay="300">
                                                     <div class="block-counter-1">
                                                         <span class="number text-primary"><span
@@ -671,7 +671,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                     </table>
 
                                 </div>
@@ -791,6 +791,7 @@
 
 
                 @endforeach
+                
             </div>
         </div>
 
@@ -1014,7 +1015,6 @@
     </div>
 </div>
 </div>
-
 
 @include('parts.footer')
 
