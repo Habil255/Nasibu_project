@@ -31,7 +31,7 @@
       
       
                 <div class="site-logo">
-                    <a href="#"><img src="images\nm-logo.png "style="height 5%; width:5%;"></a>
+                    <a href="#"><img src="images\logoy4c1.png "style="height 5%; width:5%;"></a>
                 </div>
                   
                   <div class="col-12">
@@ -362,13 +362,12 @@
                         style="max-width:120px"></td> --}}
 
                         <div class="site-section-cover overlay img-bg-section"
-                            style="background-image: url('images/_MG_6940.jpg'); height:100%;">
+                            style="background-image: url('images/y4c.jpg'); height:100%;">
                             <div class="container">
                                 <div class="row align-items-center justify-content-center text-center">
                                     <div class="col-md-12 col-lg-7">
-                                        <h1 data-aos="fade-up" data-aos-delay="">Hi, Meet Nasibu.</h1>
-                                        <h1 data-aos="fade-up" data-aos-delay="" style="font-size:35px;">A Dar es Salaam
-                                            Based Media Guru.
+                                        <h1 data-aos="fade-up" data-aos-delay="">Address Community challenges</h1>
+                                        <h1 data-aos="fade-up" data-aos-delay="" style="font-size:35px;">With innovative solutions
                                         </h1>
                                         <p class="mb-5 w-75 mx-auto" data-aos="fade-up" data-aos-delay="100">
                                         </p>
@@ -399,12 +398,11 @@
 </div> -->
 
                         <div class="site-section-cover overlay img-bg-section"
-                            style="background-image: url('images/_MG_6932.jpg'); ;">
+                            style="background-image: url('images/20200922_122831.jpg'); ;">
                             <div class="container">
                                 <div class="row align-items-center justify-content-center text-center">
                                     <div class="col-md-12 col-lg-7">
-                                        <h1 data-aos="fade-up" data-aos-delay="">I solve Communication
-                                            Problems</h1>
+                                        <h1 data-aos="fade-up" data-aos-delay="">Human-Centered Design Skills <br>For Creative and Strategic Solutions</h1>
                                         <p class="mb-5 w-75 mx-auto" data-aos="fade-up" data-aos-delay="100">
                                         </p>
                                         <p data-aos="fade-up" data-aos-delay="200"><a href="#services-section"
@@ -417,12 +415,12 @@
                         </div>
 
                         <div class="site-section-cover overlay img-bg-section"
-                            style="background-image: url('images/_MG_6929.jpg');">
+                            style="background-image: url('images/File_004.jpeg');">
                             <div class="container">
                                 <div class="row align-items-center justify-content-center text-center">
                                     <div class="col-md-12 col-lg-7">
                                         <h1 data-aos="fade-up" data-aos-delay="">
-                                            Writting. Directing.<br>Strategy. & Training</h1>
+                                            Actionable solutions to societal Challeges<br>to societal Challenges</h1>
                                         <p class="mb-5 w-75 mx-auto" data-aos="fade-up" data-aos-delay="100">
                                         </p>
                                         <p data-aos="fade-up" data-aos-delay="200"><a href="#about-section"
